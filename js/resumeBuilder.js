@@ -9,7 +9,11 @@ var bio = {
         "location": "Hyderabad"
     },
     "welcomeMessage": "Hey there!",
+<<<<<<< HEAD
     "skills": ["Problem Solver", "Excellent verbal and written communication skills", "Hardworker", "Team facilitator",],
+=======
+    "skills": ["Problem Solver", "Excellent verbal and written communication skills", "Hardworker", "Team facilitator"],
+>>>>>>> origin/master
     "biopic": "images/me.jpg"
 
 };
@@ -28,6 +32,7 @@ bio.display = function() {
     $("#header").prepend(formattedName);
     $("#header").append(pic);
     $("#header").append(formattedWcMsg);
+<<<<<<< HEAD
     $("#topContacts, #footerContacts").append(formattedMobile, formattedEmail, formattedGithub, formattedLocation);
     $("#header").append(HTMLskillsStart);
     for (var i = 0; i < bio.skills.length; i++) {
@@ -38,6 +43,33 @@ bio.display = function() {
     }
 };
 
+=======
+    $("#topContacts").append(formattedMobile);
+    $("#topContacts").append(formattedEmail);
+    $("#topContacts").append(formattedGithub);
+    $("#topContacts").append(formattedLocation);
+    $("#footerContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedLocation);
+
+
+    if (bio.skills.length > 0) {
+        $("#header").append(HTMLskillsStart);
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+        $("#skills").append(formattedSkill);
+        formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+        $("#skills").append(formattedSkill);
+    }
+
+};
+
+bio.display();
+>>>>>>> origin/master
 
 //internationalize button
 function inName(name) {
@@ -68,6 +100,7 @@ var work = {
         "description": "adhsadbshdb dbs adj sahdsajkd akdj abd dasjkdbsaljdb sjkd bsadk adabbdasd jkds kksabdsnbdjsabad  bskjdbas daskdj sajkd "
     }]
 };
+<<<<<<< HEAD
 work.display = function() {
     work.jobs.forEach(function(job) {
         $("#workExperience").append(HTMLworkStart);
@@ -83,6 +116,22 @@ work.display = function() {
         $(".work-entry:last").append(formattedDescription);
     });
 };
+=======
+
+work.jobs.forEach(function(job) {
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", job.employer);
+    var formattedTitle = HTMLworkTitle.replace("%data%", job.title);
+    var formattedEmployerTitle = formattedEmployer + formattedTitle;
+    $('.work-entry:last').append(formattedEmployerTitle);
+    var formattedDescription = HTMLworkDescription.replace("%data%", job.description);
+    var formattedDates = HTMLworkDates.replace("%data%", job.dates);
+    var formattedLocation = HTMLworkLocation.replace("%data%", job.location);
+    $(".work-entry:last").append(formattedDates);
+    $(".work-entry:last").append(formattedLocation);
+    $(".work-entry:last").append(formattedDescription);
+});
+>>>>>>> origin/master
 
 //Projects div
 var projects = {
@@ -95,6 +144,7 @@ var projects = {
 
 };
 
+<<<<<<< HEAD
 projects.display = function() {
     projects.projects.forEach(function(project) {
         $("#projects").append(HTMLprojectStart);
@@ -111,6 +161,23 @@ projects.display = function() {
         }
     });
 }
+=======
+projects.projects.forEach(function(project) {
+    $("#projects").append(HTMLprojectStart);
+    var formattedTitle = HTMLprojectTitle.replace("%data%", project.title);
+    $(".project-entry:last").append(formattedTitle);
+    var formattedDates = HTMLprojectDates.replace("%data%", project.dates);
+    $(".project-entry:last").append(formattedDates);
+    var formattedDescription = HTMLprojectDescription.replace("%data%", project.description);
+    $(".project-entry:last").append(formattedDescription);
+    if (project.images.length > 0) {
+        var formattedImages = HTMLprojectImage.replace("%data%", project.images[0]);
+        $(".project-entry:last").append(formattedImages);
+        formattedImages = HTMLprojectImage.replace("%data%", project.images[1]);
+        $(".project-entry:last").append(formattedImages);
+    }
+});
+>>>>>>> origin/master
 
 
 
@@ -140,6 +207,7 @@ var education = {
     }]
 };
 
+<<<<<<< HEAD
 education.display = function() {
     education.schools.forEach(function(school) {
         $("#education").append(HTMLschoolStart);
@@ -172,6 +240,35 @@ education.display = function() {
 
     });
 };
+=======
+
+education.schools.forEach(function(school) {
+    $("#education").append(HTMLschoolStart);
+    var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+    var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
+    var formattedSchoolDegree = formattedSchoolName + formattedDegree;
+    $(".education-entry:last").append(formattedSchoolDegree);
+    var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.dates);
+    $(".education-entry:last").append(formattedSchoolDate);
+    var formattedSchoolLocation = HTMLschoolLocation.replace("%data%", school.location);
+    $(".education-entry:last").append(formattedSchoolLocation);
+    var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
+    $(".education-entry:last").append(formattedMajor);
+});
+education.onlineCourses.forEach(function(course) {
+    $(".education-entry:last").append(HTMLonlineClasses);
+    var formattedTitle = HTMLonlineTitle.replace("%data%", course.title);
+    var formattedSchool = HTMLonlineSchool.replace("%data%", course.school);
+    var formattedTitleSchool = formattedTitle + formattedSchool;
+    $(".education-entry:last").append(formattedTitleSchool);
+    var formattedDates = HTMLonlineDates.replace("%data%", course.dates);
+    $(".education-entry:last").append(formattedDates);
+    var formattedURL = HTMLonlineURL.replace("%data%", course.url);
+    $(".education-entry:last").append(formattedURL);
+
+});
+
+>>>>>>> origin/master
 
 
 $("#mapDiv").append(googleMap);
@@ -184,6 +281,7 @@ $(document).click(function(loc) {
     var y = loc.pageY;
 
     logClicks(x, y);
+<<<<<<< HEAD
 });
 
 
@@ -191,3 +289,6 @@ bio.display();
 work.display();
 projects.display();
 education.display();
+=======
+});
+>>>>>>> origin/master

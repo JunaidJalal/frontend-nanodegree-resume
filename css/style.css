@@ -22,7 +22,10 @@ h6 {
 .work-entry,
 .project-entry {
     padding: 0 5%;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }
 
 h1 {
@@ -75,8 +78,11 @@ h5 {
     color: #999;
     line-height: 16px;
     float: right;
+<<<<<<< HEAD
     font-weight: bolder;
 
+=======
+>>>>>>> origin/master
 }
 
 p {
@@ -132,7 +138,11 @@ a {
 
 /* TODO: Replace with image later */
 #header {
+<<<<<<< HEAD
     background-image: url("http://hdwallpaperbackgrounds.net/wp-content/uploads/2016/09/Dark-Background-Images-2.jpg");
+=======
+    background-color: #484848;
+>>>>>>> origin/master
 }
 
 .flex-box {
@@ -172,7 +182,10 @@ img {
 
 span {
     padding: 5px;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 }
 
 #lets-connect {
@@ -205,10 +218,13 @@ span {
     .welcome-message {
         display: none;
     };
+<<<<<<< HEAD
 }
 
 .red{
     background-color: #b02020;
+=======
+>>>>>>> origin/master
 }
 
 #map {
